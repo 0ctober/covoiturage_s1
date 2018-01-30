@@ -1,0 +1,75 @@
+
+<app-search-annonce></app-search-annonce>
+
+<div class="container">
+	
+	<div class="row topresult">
+		<div class="form-group col-sm-12">
+			<div class="form-control col-sm-12">
+				<div class="row">
+					<div class="col-md-8">
+						<h3>{{ resultats }} trajets de {{ depart }} à {{ arrivee }} </h3>
+					</div>
+					<div class="col-md-4 sort">
+						<label>Trier par</label>
+						<label>
+							<input type="radio" (click)="changeOrder(0)" name="order" value="0" [(ngModel)]="order">&nbsp;&nbsp;<i class="fa fa-calendar"></i>
+						</label>
+						<label>
+							<input type="radio" (click)="changeOrder(1)" name="order" value="1" [(ngModel)]="order">&nbsp;&nbsp;€
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div *ngFor="let annonce of annonces" class="annonce col-md-12">
+			<a href="javascript:void(0)" [routerLink]="['/annonce', annonce._id._id, annonce._id.a, annonce._id.b]" >
+				<div class="col-sm-3 user">
+					<div class="row">
+						<div class="col-sm-6 avatar">
+							<img src="{{ annonce._id.conducteur.photo[0] }}" class="avt">
+						</div>
+						<div class="col-sm-6 userinfo">
+							<div class="name">{{ (annonce._id.conducteur.firstname[0].length>8)? (annonce._id.conducteur.firstname[0] | slice:0:8)+'.':(annonce._id.conducteur.firstname[0])  }}</div>
+							<div class="age">{{annonce._id.conducteur.age[0]}} ans</div>
+							<div class="note"><i class="fa fa-star"></i> {{annonce._id.conducteur.note[0]}}/5</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 trajet">
+					<div class="row">
+						<div class="date col-sm-12">
+							{{annonce._id.date}}
+						</div>
+						<div class="itineraire col-sm-12">
+							<span *ngFor="let ville of annonce._id.villes; let i = index">
+								{{ville}} <i *ngIf="i+1 < annonce._id.villes.length" class="fa fa-long-arrow-right"></i>
+							</span>
+						</div>
+						<div class="col-md-12 depart">
+							<i class="fa fa-map-marker"></i> {{ annonce._id.adresses[annonce._id.a].voie }}, {{ annonce._id.adresses[annonce._id.a].departement }}
+						</div>
+						<div class="col-md-12 arrivee">
+							<i class="fa fa-map-marker"></i> {{ annonce._id.adresses[annonce._id.b].voie }}, {{ annonce._id.adresses[annonce._id.b].departement }}
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3 info">
+					<div class="row">
+
+						<div class="prix col-sm-12">
+							<h2>{{annonce._id.prix}},00 €</h2>
+							<span>par place</span>
+						</div>
+						<div class="places col-sm-12">
+							<strong>{{ annonce._id.places }}</strong> places restantes
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>

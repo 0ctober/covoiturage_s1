@@ -1,0 +1,88 @@
+<div class="row xxx">
+	<div class="container">
+		<div class="col-lg-4 col-md-6 col-xs-12 login-form">
+			<div class="panel panel-default">
+				<input class="btn btn-lg btn-facebook btn-block" type="submit" value="S'enregistrer via facebook">
+				<hr/>
+				<div class="panel-heading">
+					<h3 class="panel-title text-center">Inscription</h3>
+				</div>
+				<div *ngIf="!ok" class="alert alert-danger" role="alert">
+					<strong>{{message}}</strong>
+				</div>
+				<!-- <pre>{{myform.value | json}}</pre> -->
+				<div class="panel-body">
+					<form (ngSubmit)="onSubmit()" #registerForm="ngForm" novalidate [formGroup]="myform" role="form">
+						<!-- MAIL  -->
+						<div class="form-group"
+						[ngClass]="(email.invalid && (email.dirty || email.touched))?'has-danger':(email.valid && (email.dirty || email.touched)?'has-success':'')">
+						<input formControlName="email" type="email" id="login" required placeholder="Email" [(ngModel)]="login" name="login" class="form-control">
+						<div class="form-control-feedback" *ngIf="email.errors && (email.dirty || email.touched)">
+						<p *ngIf="email.errors.required">L'email est requise.</p>
+					</div>
+				</div>
+				<!-- PASSWORD1  -->
+				<div class="form-group"
+				[ngClass]="(password1.invalid && (password1.dirty || password1.touched)) ? 'has-danger' : (password1.valid && (password1.dirty || password1.touched) ? 'has-success':'')">
+					<input formControlName="password1" class="form-control" required pattern=".{6,}" placeholder="Mot de passe 1" name="Mot de passe" [(ngModel)]="pass1" type="password" value="">
+					<div class="form-control-feedback"
+					*ngIf="password1.errors && (password1.dirty || password1.touched)">
+					<p *ngIf="password1.errors.required">Un mot de passe est requis</p>
+					<p *ngIf="password1.errors.minlength">Le mot de passe doit faire 8 caracères, il reste {{password1.errors.minlength.requiredLength - password1.errors.minlength.actualLength}} characters </p>
+				</div>
+			</div>
+			<!-- PASSWORD2  -->
+			<div class="form-group"
+				[ngClass]="(password2.invalid && (password2.dirty || password2.touched)) ? 'has-danger' : (password2.valid && (password2.dirty || password2.touched) ? 'has-success':'')">
+			<input formControlName="password2" class="form-control" required pattern=".{6,}" placeholder="Mot de passe 2" name="Mot de passe" [(ngModel)]="pass2" type="password" value="">
+			<p *ngIf="!equalsPasswords()">Les mots de passes doivent être identiques.</p>
+			<div class="form-control-feedback"
+					*ngIf="password2.errors && (password2.dirty || password2.touched)">
+					<p *ngIf="password2.errors.required">Confirmez le mot de passe</p>
+				</div>
+			</div>
+			<hr/>
+			<!-- NOM - NAME  -->
+			<div class="form-group"
+			[ngClass]="(name.invalid && (name.dirty || name.touched)) ? 'has-danger' : (name.valid && (name || name.touched) ? 'has-success':'')">
+			<input formControlName="name" type="text" id="nom" required placeholder="Nom" [(ngModel)]="nom" name="nom" class="form-control">
+			<div class="form-control-feedback" *ngIf="name.errors && (name.dirty || name.touched)">
+				<p *ngIf="name.errors.required">First Name is required</p>
+			</div>
+		</div>
+		<!-- PRENOM - FIRST NAME  -->
+		<div class="form-group"
+		[ngClass]="(firstName.invalid && (firstName.dirty || firstName.touched)) ? 'has-danger' : (firstName.valid && (firstName.dirty || firstName.touched) ? 'has-success':'')">
+		<input formControlName="firstName" type="text" id="prenom" required placeholder="Prénom" [(ngModel)]="prenom" name="prenom" class="form-control">
+	</div>
+	<!-- DATE NAISSANCE  -->
+	<div class="row ignm">
+		<div class="col-sm-12 form-group">
+			<div class="row">
+				<!-- JOUR  -->
+				<input [ngClass]="(day.invalid && (day.dirty || day.touched)) ? 'has-danger-x' : (day.valid && (day.dirty || day.touched) ? 'has-success-x':'')"
+				formControlName="day" type="text" id="dd" required  placeholder="Jour" [(ngModel)]="dd" name="dd" class="col-sm-4 form-control">
+				<!-- MOIS  -->
+				<input [ngClass]="(month.invalid && (month.dirty || month.touched)) ? 'has-danger-x' : (month.valid && (month.dirty || month.touched) ? 'has-success-x':'')"
+				formControlName="month" type="text" id="mm" required placeholder="Mois" [(ngModel)]="mm" name="mm" class="col-sm-4 form-control">
+				<!-- ANNEE  -->
+				<input [ngClass]="(year.invalid && (year.dirty || year.touched)) ? 'has-danger-x' : (year.valid && (year.dirty || year.touched) ? 'has-success-x':'')"
+				formControlName="year" type="text" id="yyyy" required placeholder="Année" [(ngModel)]="yyyy" name="yyyy" class="col-sm-4 form-control">
+				</div>
+		</div>
+	</div>
+	<!-- ADRESSE  -->
+	<div class="form-group" [ngClass]="(adress.invalid && (adress.dirty || adress.touched)) ? 'has-danger' : (adress.valid && (adress.dirty || adress.touched) ? 'has-success':'')">
+		<input formControlName="adress" type="text" id="adresse" required placeholder="Adresse" [(ngModel)]="adresse" name="adresse" class="form-control">
+	</div>
+	<!-- TELEPHONE  -->
+	<div class="form-group" [ngClass]="(numberP.invalid && (numberP.dirty || numberP.touched)) ? 'has-danger' : (numberP.valid && (numberP.dirty || numberP.touched) ? 'has-success':'')">
+		<input formControlName="numberP" type="text" id="phone" required placeholder="Téléphone" [(ngModel)]="phone" name="phone" class="form-control">
+	</div>
+	<button [disabled]="!myform.valid || pass1 =='' " class="btn btn-lg btn-success btn-block" type="submit" value="Login">S'enregistrer</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>

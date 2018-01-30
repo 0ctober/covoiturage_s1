@@ -1,0 +1,197 @@
+<app-search-annonce></app-search-annonce>
+<div class="container catch-annonce">
+	<div class="row">
+		
+		<div class="col-sm-12">
+			<!-- ISSUE 2 -->
+			<div *ngIf="annonce!=null">
+				<div class="row">
+					<div class="col-sm-8">
+						<div class="col-sm-12 principal">
+
+							<div class="villesth" *ngFor="let ville of annonce._id.villes; let idx = index">
+								<span [ngClass]="{'diff':idx==depart||idx==arrivee}">
+									{{ville.ville}} <i *ngIf="idx+1 < annonce._id.villes.length" class="fa fa-long-arrow-right"></i>
+								</span>
+							</div>
+							<table>
+								<tr>
+									<td>Départ</td>
+									<td><i class="fa fa-map-marker"></i>&nbsp;&nbsp;{{annonce._id.villes[depart].numero}}, {{annonce._id.villes[depart].voie}} </td>
+								</tr>
+								<tr>
+									<td>Arrivée</td>
+									<td><i class="fa fa-map-marker"></i>&nbsp;&nbsp;{{annonce._id.villes[arrivee].numero}}, {{annonce._id.villes[arrivee].voie}}</td>
+								</tr>
+								<tr>
+									<td>Date de départ</td>
+									<td><i class="fa fa-clock-o"></i>&nbsp;&nbsp; {{ annonce._id.date_depart }} </td>
+								</tr>
+							</table>
+						</div>	
+						<div class="col-sm-12 travel-info">
+							<div class="row">
+								<div class="col-sm-12">
+									<span><i class="fa fa-map-o"></i>&nbsp;&nbsp;Information sur le trajet</span>
+								</div>
+								<div class="col-sm-12 col-md-6">
+									<table>
+										<tr>
+											<td>Durée</td>
+											<td><i class="fa fa-"></i>&nbsp;&nbsp;
+
+
+												{{ ((annonce.duree/3600)  | number:'1.0-0') }} heures
+												{{ ((annonce.duree/60%60) | number:'1.0-0') }} minutes
+
+											</td>
+										</tr>
+										<tr>
+											<td>Distance</td>
+											<td><i class="fa fa-"></i>&nbsp;&nbsp;{{ annonce.distance}} km</td>
+										</tr>
+									</table>
+								</div>
+								<div class="col-sm-12 col-md-6">
+									<table>
+										<tr>
+											<td>Départ</td>
+											<td>{{annonce._id.villes[depart].lat}}, {{annonce._id.villes[depart].lng}}</td>
+										</tr>
+										<tr>
+											<td>Arrivée</td>
+											<td>{{annonce._id.villes[arrivee].lat}}, {{annonce._id.villes[arrivee].lng}}</td>
+										</tr>
+									</table>
+									
+								</div>
+								<div class="col-sm-12">
+									<button (click)="getDirection()" class="btn btn-primary col-sm-12">Afficher le trajet </button>
+										<!-- <agm-map [latitude]="lat" [longitude]="lng">
+											<agm-marker [latitude]="options.depart.lat" [longitude]="options.depart.lng"></agm-marker>
+											<agm-marker [latitude]="options.arrivee.lat" [longitude]="options.arrivee.lng"></agm-marker>
+										</agm-map> -->
+										<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+											
+											<agm-direction *ngIf="dir" [origin]="dir.origin" [destination]="dir.destination"></agm-direction>
+											
+										</agm-map>
+										
+									</div>
+								</div>
+							</div>	
+						</div>
+						<div class="col-sm-4">
+							<div class="col-sm-12">
+								<div class="row tarification-trajet">
+									<div class="reserver">
+										<div *ngIf="annonce.places == 0">
+											<button class="btn btn-warning col-sm-12">Complet</button>
+										</div>
+										<div *ngIf="annonce.places > 0">
+											<button *ngIf="reserve == false" (click)="reserver()" class="btn btn-primary col-sm-12">Réserver</button>
+											<button *ngIf="reserve" class="btn btn-success col-sm-12" disabled>Vous avez réservé</button>
+										</div>
+									</div>
+									<table class="col-sm-12">
+										<tr class="prix"><td>Prix par place</td><td> {{ annonce.prix}} €</td></tr>
+										<tr><td>Places libres</td><td> {{ annonce.places }}</td></tr>
+									</table>
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="row user-info">
+									<div class="col-sm-12">{{ annonce._id.conducteur.firstname }}</div>
+									<div class="col-sm-12">
+										<button type="button" class="btn btn-primary col-sm-12" (click)="openModal(template)">Voir le profil</button>
+									</div>
+									<div class="col-sm-12"><img src="{{ annonce._id.conducteur.picture }}"></div>
+									<table class="col-sm-12">
+										<tr><td>Animaux </td><td> {{ annonce._id.conducteur.pets }}</td></tr>
+										<tr><td>fumeur </td><td> {{ annonce._id.conducteur.smoking }}</td></tr>
+										<tr><td>Musique </td><td> {{ annonce._id.conducteur.music }}</td></tr>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+	<ng-template #template>
+		<div class="modal-header">
+			<h4 class="modal-title pull-left">Profil du conducteur</h4>
+			<button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="modal-body">
+			<div *ngIf="conducteur!=null">
+				<div class="row">
+
+					<div [ngClass]="{'col-sm-4':true, 'homme':conducteur.gender=='male'}">
+						<img class="avt" src="{{ conducteur.picture }}">
+					</div>
+					<div class="col-sm-8">
+						<div>
+							<div class="nom"> {{ conducteur.name }}</div>
+							<div class="prenom">{{ conducteur.firstname }}</div>
+						</div>
+						<div class="description">
+							{{ conducteur.description }}
+						</div>
+						<span class="badge badge-success">Passager  {{ conducteur.historique.passager.length }}</span>
+						<span class="badge badge-info">Conducteur {{ conducteur.historique.conducteur.length }}</span>
+						<span class="badge badge-danger">Annulations  {{ conducteur.historique.annulation.length }}</span>
+					</div>
+				</div>
+				<table>
+					<tr>
+						<td>age</td>
+						<td>{{ conducteur.age }} ans</td>
+					</tr>
+					<tr>
+						<td>Enregistré depuis</td>
+						<td>{{ conducteur.registered }}</td>
+					</tr>
+					<tr>
+						<td>Conducteur</td>
+						<td>
+							<span class="note"><i class="fa fa-star"></i>&nbsp;&nbsp;{{ conducteur.note.conducteur }}</span>
+						</td>
+					</tr>
+					<tr>
+						<td>Passager</td>
+						<td>
+							<span class="note"><i class="fa fa-star"></i>&nbsp;&nbsp;{{ conducteur.note.passager }}</span>
+						</td>
+					</tr>
+					<tr>
+						<td>Animaux</td>
+						<td>{{ conducteur.pets }}</td>
+					</tr>
+					<tr>
+						<td>Fumeur</td>
+						<td>{{ conducteur.smoking }}</td>
+					</tr>
+					<tr>
+						<td>Musique</td>
+						<td>{{ conducteur.music }}</td>
+					</tr>
+				</table>
+
+				<div class="avis row">
+					<div *ngFor="let avis of conducteur.avis.passager" class="col-sm-12 avi">
+						<span class="note"><i class="fa fa-star"></i>&nbsp;&nbsp; {{avis.note}} /5 </span>
+						<span class="com"> {{avis.com}} </span>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</ng-template>
+

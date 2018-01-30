@@ -1,0 +1,34 @@
+<div class="row xxx">
+	<div class="container">
+		<div class="col-lg-4 col-md-6 col-xs-12 login-form">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title text-center">Connexion</h3>
+				</div>
+				<div *ngIf="!ok" class="alert alert-danger" role="alert">
+				{{ message }}
+				</div>
+				<div class="panel-body">
+					<form (ngSubmit)="onSubmit()" #loginForm="ngForm" role="form">
+						<div class="form-group">
+							<input type="text" id="login" required placeholder="Email" [(ngModel)]="login" name="login" class="form-control">
+						</div>
+						<div class="form-group">
+							<input class="form-control" placeholder="Password" name="Mot de passe" [(ngModel)]="pass" type="password" value="">
+						</div>
+						<div class="checkbox">
+								<!-- <label>
+									<input name="remember" type="checkbox" value="Remember Me"> Remember Me
+								</label> -->
+							</div>
+							<button class="btn btn-lg btn-success btn-block" type="submit" value="Login">Connexion</button>
+						</form>
+						<hr/>
+						<h4 style="text-align:center">OU</h4>
+						<input class="btn btn-lg btn-facebook btn-block" type="submit" value="Connexion via facebook">
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>

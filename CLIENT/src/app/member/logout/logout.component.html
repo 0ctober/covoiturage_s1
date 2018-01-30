@@ -1,0 +1,6 @@
+<p *ngIf="logout()==true">
+  Vous allez être redirigé
+</p>
+<p *ngIf="logout()==false">
+  Vous n'êtes pas connecté, Veuillez vous <a href="javascript:void(0)" routerLink="/login">connecter</a> ou <a href="javascript:void(0)" routerLink="/register">créez un compte</a>
+</p>
