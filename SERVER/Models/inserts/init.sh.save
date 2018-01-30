@@ -1,0 +1,6 @@
+colls=(member etape portion portion_standard annonce anulation)
+
+for c in ${colls[@]}
+do
+  mongoimport --db model --collection $c.json --jsonArray
+done

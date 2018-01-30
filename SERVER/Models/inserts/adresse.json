@@ -1,0 +1,73 @@
+[
+{
+	"_id" :  "5a1c7c9566bc4a3647c65917",
+	"voie" : "McDo Odysseum",
+	"numero" : 4,
+	"departement" : 34000,
+	"ville" : "MONTPELLIER",
+	"lat" : 43.603487,
+	"lng" :  3.920384
+	},
+{
+	"_id" :  "5a1c7c9566bc4a3647c65918",
+	"voie" : "La Cité Médiévale",
+	"numero" : 0,
+	"departement" : 11000,
+	"ville" : "CARCASSONNE",
+	"lat" : 43.206295,
+	"lng" : 2.366474
+	},
+{
+	"_id" :  "5a1c7c9566bc4a3647c65919",
+	"voie" : "Place Saint-Sernin",
+	"numero" : 2,
+	"departement" : 31000,
+	"ville" : "TOULOUSE",
+	"lat" : 43.604530,
+	"lng" : 1.443762
+	},
+{
+	"_id" :  "5a1c7c9566bc4a3647c6591a",
+	"voie" : "plae Jean-Jacques",
+	"numero" : 48,
+	"departement" : 46000,
+	"ville" : "CAHORS",
+	"lat" : 44.446481,
+	"lng" : 1.441472
+	},
+{
+	"_id" :  "5a1c7cff66bc4a3647c74f41",
+	"voie" : "Devant la gare",
+	"numero" : 2,
+	"departement" : 34090,
+	"ville" : "ORANGE",
+	"lat" : 44.137434,
+	"lng" : 4.808589
+	},
+{
+	"_id" :  "5a1c7cff66bc4a3647c74f42",
+	"voie" : "plae de la préfecture",
+	"numero" : 4,
+	"departement" : 26200,
+	"ville" : "MONTÉLIMAR",
+	"lat" : 44.546545,
+	"lng" : 4.751759
+	},
+{
+	"_id" :  "5a1c7cff66bc4a3647c74f43",
+	"voie" : "Gare de Marseille Saint Charles",
+	"numero" : 0,
+	"departement" : 13001,
+	"ville" : "MARSEILLE",
+	"lat" : 43.302215,
+	"lng" : 5.379952
+	},
+{
+	"_id" :  "5a1c7cff66bc4a3647c74f44",
+	"voie" : "plae Jean-Jacques",
+	"numero" : 48,
+	"departement" : 6000,
+	"ville" : "NICE",
+	"lat" : 43.709994,
+	"lng" : 7.262296
+	} ]  

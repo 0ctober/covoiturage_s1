@@ -1,0 +1,8 @@
+db.annonce.drop()
+db.adresse.drop()
+db.annulation.drop()
+db.etape.drop()
+db.member.drop()
+db.portion.drop()
+db.portion_standard.drop()
+db.villes.drop()

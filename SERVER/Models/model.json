@@ -1,0 +1,101 @@
+[{
+	// USERINFO
+	"member":{
+		"user":1,
+		"fermeture":false,
+		"email":"mail@mail.mail",
+		"password":"**************",
+	    "name": "Pennington Rollins",
+	    "firstname": "hocho",
+		"birthday":"24-11-1980",
+		"age":37,
+		"phone": "+1 (940) 597-2832",
+	    "address": "753 Throop Avenue, Albany, Wyoming, 4094",
+		"gender": "male",
+		"picture": "http://placehold.it/32x32",
+		"registered": "2017-03-24T06:26:42 -01:00",
+		"description":"Bonjour je suis moi même",
+		"note":{
+			"conducteur":4.2,
+			"passager":2
+		},
+		"pets":true,
+		"smoking":true,
+		"music":true,
+		
+		"vehicule":{
+			"4B20012":{
+				"marque":"honda",
+				"modele":"civik",
+				"places":4
+			},
+			"ab020bz":{
+				"marque":"suzuki",
+				"modele":"alto",
+				"places":"3"
+			}
+		}, 
+
+		"historique":{
+			"passager":	["@annonce"],
+			"conducteur": ["@annonce"]
+		}
+
+	},
+
+	// LES VOITURES
+
+	"etape" :{
+		"depart":false, // est ce le point de départ d'un itinéraire
+		"terminus":true, // est ce le point d'arrivé d'un itinéraire
+		"heure":"21:15:00",
+		"adresse":{	// Lieu de rendez-vous
+			"rue":"plae Jean-Jacques",
+			"departement":34000,
+			"ville":"Montpellier",
+			"lat":21212,	// Géolocalisable
+			"lng":21212
+		},
+		"passager_arrivant":["@USER"],
+		"passagers_sortant":["@USER"]
+	},
+
+	"portion":{ 
+		"a" : "@etape",	
+		"b" : "@etape", // Next
+		"prix":10,	// €
+		"distance":150	// Km
+	},
+	// On conserve les tarifs standards
+	"portion_standard":{
+		"tarif":["@portion"]
+	},
+
+	"annonce":{
+		"dispo":true,	// le trajet est complet ou pas 
+		"fini":false,	// Le trajet est terminé
+		"voiture":"@vehicule.1",	// le véhicule
+		"direct":false,		// True : contient seulement le départ et l'arrivée ( 2 étapes )
+		"itineraire":["@portions"], // les portions
+		"date":"21-10-2017",
+		"durée":"02:30:00",
+		"distance":"250",
+		"conducteur":"@USER",
+		"avis":{
+			"0":{
+				"note":5,
+				"com":"J'ai aimé le trajet"
+			},
+			"1":{
+				"note":1,
+				"com":"Pas moi"
+			}
+		}
+	},
+
+	"anulation" : {
+		"annonce":"",
+		"conducteur":false
+	}
+
+}]

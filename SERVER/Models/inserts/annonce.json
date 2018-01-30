@@ -1,0 +1,90 @@
+[
+	{
+		"_id" : "5a1c7d0066bc4a3647c74f4e",
+		"dispo" : true,
+		"fini" : false,
+		"voiture" : "4B20012",
+		"direct" : false,
+		"itineraire" : {
+			"nbPlaces" : 4,
+			"portions" : [
+				"5a1c7c3966bc4a3647c562f4",
+				"5a1c7c3966bc4a3647c562f5",
+				"5a1c7c3966bc4a3647c562f6"
+			]
+		},
+		"date" : new Date("2018-01-21T15:21:00Z"),
+		"durée" : 4.20,
+		"distance" : 358,
+		"conducteur" : "jc.idjell@gmail.com"
+	},
+	{
+		"_id" : "5a1c7d0066bc4a3647c74f4f",
+		"dispo" : true,
+		"fini" : false,
+		"voiture" : "4B20018",
+		"direct" : true,
+		"itineraire" : {
+			"nbPlaces" : 4,
+			"portions" : [
+				"5a1c7c3966bc4a3647c562f7"
+			]
+		},
+		"date" : new Date("2018-01-21T15:21:00Z"),
+		"durée" : 2.30,
+		"distance" : 142,
+		"conducteur" : "arthuro.iz@gmail.com"
+},
+	{
+		"_id" : "5a1c7d0066bc4a3647c74f50",
+		"dispo" : true,
+		"fini" : false,
+		"voiture" : "7f521v",
+		"direct" : true,
+		"itineraire" : {
+			"nbPlaces" : 4,
+			"portions" : [
+				 "5a1c7c9566bc4a3647c6591b"
+			]
+		},
+		"date" : new Date("2018-01-22T15:21:00Z"),
+		"durée" : 1.30,
+		"distance" : 242,
+		"conducteur" : "henrique.dos@gmail.com"
+	},
+	{
+		"_id" : "5a1c7d0066bc4a3647c74f51",
+		"dispo" : true,
+		"fini" : false,
+		"voiture" : "4B20012",
+		"direct" : false,
+		"itineraire" : {
+			"nbPlaces" : 4,
+			"portions" : [
+				 "5a1c7c9566bc4a3647c6591c",
+				 "5a1c7c9566bc4a3647c6591d"
+			]
+		},
+		"date" : new Date("2018-01-23T15:21:00Z"),
+		"durée" : 4.08,
+		"distance" : 377,
+		"conducteur" : "cecile.frei@gmail.com"
+	},
+	{
+		"_id" : "5a1c7d0066bc4a3647c74f52",
+		"dispo" : true,
+		"fini" : true,
+		"voiture" : "1ds0v4",
+		"direct" : true,
+		"itineraire" : {
+			"nbPlaces" : 4,
+			"portions" : [
+				 "5a1c7c9566bc4a3647c6591e"
+			]
+		},
+		"date" : new Date("2018-01-21T20:21:00Z"),
+		"duree" : 2.19,
+		"distance" : 199,
+		"conducteur" : "eric.zeit@gmail.com"
+	}
+]

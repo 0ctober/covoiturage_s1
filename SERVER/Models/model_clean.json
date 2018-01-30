@@ -1,0 +1,103 @@
+[{
+	
+	"member":{
+		"user":1,
+		"fermeture":false,
+		"email":"mail@mail.mail",
+		"password":"**************",
+	    "name": "Pennington Rollins",
+	    "firstname": "hocho",
+		"birthday":"24-11-1980",
+		"age":37,
+		"phone": "+1 (940) 597-2832",
+	    "address": "753 Throop Avenue, Albany, Wyoming, 4094",
+		"gender": "male",
+		"picture": "http://placehold.it/32x32",
+		"registered": "2017-03-24T06:26:42 -01:00",
+		"description":"Bonjour je suis moi même",
+		"note":{
+			"conducteur":4.2,
+			"passager":2
+		},
+		"pets":true,
+		"smoking":true,
+		"music":true,
+		
+		"vehicule":{
+			"4B20012":{
+				"marque":"honda",
+				"modele":"civik",
+				"places":4
+			},
+			"ab020bz":{
+				"marque":"suzuki",
+				"modele":"alto",
+				"places":"3"
+			}
+		}, 
+
+		"historique":{
+			"passager":	["@annonce"],
+			"conducteur": ["@annonce"]
+		}
+
+	},	
+
+	"etape" :{
+		"depart":false, 
+		"terminus":true, 
+		"heure":"21:15:00",
+		"adresse":{	
+			"rue":"plae Jean-Jacques",
+			"departement":34000,
+			"ville":"Montpellier",
+			"lat":21212,	
+			"lng":21212
+		},
+		"passager_arrivant":["@USER"],
+		"passagers_sortant":["@USER"]
+	},
+
+	"portion":{ 
+		"a" : "@etape",	
+		"b" : "@etape", 
+		"prix":10,	
+		"distance":150,
+		"prixKM":0.12
+	},
+	
+	"portion_standard":{
+		"tarif":["@portion"]
+	},
+
+	"annonce":{
+		"dispo":true,	
+		"fini":false,	
+		"voiture":"@vehicule.1",	
+		"direct":false,		
+		"itineraire":["@portions"], 
+		"date":"21-10-2017",
+		"durée":"02:30:00",
+		"distance":"250",
+		"conducteur":"@USER",
+		"avis":{
+			"0":{
+				"note":5,
+				"com":"J'ai aimé le trajet"
+			},
+			"1":{
+				"note":1,
+				"com":"Pas moi"
+			}
+		}
+	},
+
+	"anulation" : {
+		"annonce":"@annonce",
+		"utilisateur":"@user",
+		"conducteur":false
+	}
+
+}]
+
+

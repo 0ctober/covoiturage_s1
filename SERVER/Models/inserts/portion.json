@@ -1,0 +1,153 @@
+[
+{
+	"_id" :  "5a1c7c3966bc4a3647c562f4",
+	"placeLibre":3,
+	"booking" : [],
+	"accepted" : [
+		"henrique.dos@gmail.com"
+	],
+	"portion" : [
+		 "5a1c7c9566bc4a3647c65917",
+		 "5a1c7c9566bc4a3647c65918"
+	],
+	"heure" : "18:15:00",
+	"duree" : "01:40",
+	"prix" : 15,
+	"distance" : 151,
+	"prixKM" : 0.12
+},
+{
+	"_id" :  "5a1c7c3966bc4a3647c562f5",
+	"placeLibre":2,
+	"booking" : [
+	],
+	"accepted" : [
+		"arthuro.iz@gmail.com",
+		"henrique.dos@gmail.com"
+	],
+	"portion" : [
+		 "5a1c7c9566bc4a3647c65918",
+		 "5a1c7c9566bc4a3647c65919"
+	],
+	"heure" : "21:15:00",
+	"duree" : "01:10",
+	"prix" : 10,
+	"distance" : 93,
+	"prixKM" : 0.12
+},
+{
+	"_id" :  "5a1c7c3966bc4a3647c562f6",
+	"placeLibre":1,
+	"booking" : [
+		"cecile.frei@gmail.com"
+	],
+	"accepted" : [
+		"arthuro.iz@gmail.com",
+		"henrique.dos@gmail.com",
+		"eric.zeit@gmail.com"
+	],
+	"portion" : [
+		 "5a1c7c9566bc4a3647c65919",
+		 "5a1c7c9566bc4a3647c6591a"
+	],
+	"heure" : "18:30:00",
+	"duree" : "01:30",
+	"prix" : 10,
+	"distance" : 114,
+	"prixKM" : 0.12
+},
+{
+	"_id" :  "5a1c7c3966bc4a3647c562f7",
+	"placeLibre":2,
+	"booking" : [
+	],
+	"accepted" : [
+		"jc.idjell@gmail.com",
+		"henrique.dos@gmail.com"
+	],
+	"portion" : [
+		 "5a1c7c9566bc4a3647c65917",
+		 "5a1c7c9566bc4a3647c65919"
+	],
+	"heure" : "17:45:00",
+	"duree" : "02:39",
+	"prix" : 19,
+	"distance" : 242,
+	"prixKM" : 0.12
+},
+{
+	"_id" :  "5a1c7c9566bc4a3647c6591b",
+	"placeLibre":3,
+	"booking" : [
+		"arthuro.iz@gmail.com"
+	],
+	"accepted" : [
+		"cecile.frei@gmail.com"
+	],
+	"portion" : [
+		 "5a1c7c9566bc4a3647c65917",
+		 "5a1c7c9566bc4a3647c65919"
+	],
+	"heure" : "17:45:00",
+	"duree" : "02:39",
+	"prix" : 12,
+	"distance" : 242,
+	"prixKM" : 0.12
+},
+{
+	"_id" :  "5a1c7c9566bc4a3647c6591c",
+	"placeLibre":3,
+	"booking" : [
+
+	],
+	"accepted" : [
+		"henrique.dos@gmail.com"
+	],
+	"portion" : [
+		 "5a1c7c9566bc4a3647c65917",
+		 "5a1c7cff66bc4a3647c74f43"
+	],
+	"heure" : "18:10:00",
+	"duree" : "01:36",
+	"prix" : 14,
+	"distance" : 169,
+	"prixKM" : 0.12
+},
+{
+	"_id" :  "5a1c7c9566bc4a3647c6591d",
+	"placeLibre":2,
+	"booking" : [
+		
+	],
+	"accepted" : [
+		"henrique.dos@gmail.com",
+		"jc.idjell@gmail.com"
+	],
+	"portion" : [
+		 "5a1c7cff66bc4a3647c74f43",
+		 "5a1c7cff66bc4a3647c74f44"
+	],
+	"heure" : "19:00:00",
+	"duree" : "02:19",
+	"prix" : 10,
+	"distance" : 199,
+	"prixKM" : 0.12
+},
+{
+	"_id" :  "5a1c7c9566bc4a3647c6591e",
+	"booking" : [
+	],
+	"accepted" : [
+		"henrique.dos@gmail.com"
+	],
+	"portion" : [
+		 "5a1c7c9566bc4a3647c65917",
+		 "5a1c7cff66bc4a3647c74f43"
+	],
+	"heure" : "19:00:00",
+	"duree" : "02:19",
+	"prix" : 10,
+	"distance" : 199,
+	"prixKM" : 0.12
+}
+]
