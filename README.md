@@ -59,6 +59,20 @@ Le client et le serveur n'ont pas les répertoirs node_modules, il faut les inst
 [+] - Jointures avec Mongodb.<br />
 [+] - ng-bootstrap.<br />
 
+# Bon à savoir
+
+[i] : Les objets du serveur node se trouvent : /SERVER/Models/Objects/
+[i] : Les <schémas> de collection de la BDD sont hard-codés dans ce dossier : /SERVER/Models/inserts/
+    * Ils ne sont pas utils mais peuvent aider à comprendre la hiérarchie des objets entre eux.
+    * Si vous voulez consulter la BDD mongo après opération CRUD via Angular : 
+        * 1. commande : mongo
+        * 2. commande : use model 
+        * 3. db.member.find({}).pretty()
+        
+[i] : Une couche de liaison fait l'interface entre les routes et les méthodes de chaques objets : SERVER/View/routes.js
+[i] : Pour Angular n'hésitez pas à regarder l'arborescence des dossier pour observer la répartition modules -> features modules -> components 
+
+
 # Base de donnée MongoDB 
 
 ![alt text](https://github.com/0ctober/covoiturage_s1/blob/master/uml%20.png?raw=true)
