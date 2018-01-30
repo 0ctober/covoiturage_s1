@@ -9,7 +9,8 @@ Le client et le serveur n'ont pas les répertoirs node_modules, il faut les inst
 
 # Les fonctionnalités implémentées intégralement (client-server)
 
-[1] -L'utilisateur anonyme peut consulter les annonces via le moteur de recherche .<br />
+[1] <br />
+    -L'utilisateur anonyme peut consulter les annonces via le moteur de recherche .<br />
     - Il peut trier les annonces par prix ou bien par date.<br />
     - Il peut afficher les détails d'une annonce et tracer le trajet sur une carte.<br />
     - Les information du conducteur lui sont cachées s'il n'est pas connecté.<br />
@@ -18,12 +19,14 @@ Le client et le serveur n'ont pas les répertoirs node_modules, il faut les inst
     - L'utilisateur peut réserver son itinéraire qui peut être inclus ou égal à l'itinéraire d'une annonce. (décrémente le nombre de places)<br />
     
     
-[2] - Les annonces sont hiérarchisées de la façon suivante : <br />
+[2] <br />
+        - Les annonces sont hiérarchisées de la façon suivante : <br />
         - une annonce est composée d'une ou plusieurs portions,<br />
         - une portion est composée de deux adresses.<br />
         - une annonce créée a comme conducteur son créateur, de plus elle figurera dans son historique<br />
 
-[3] - L'utilisateur enregistré peut créer une annonce dans son espace (accès via menu du panel)<br />
+[3] <br />
+        - L'utilisateur enregistré peut créer une annonce dans son espace (accès via menu du panel)<br />
         - L'annonce peut comporter plusieurs étapes (converties en portions en BDD)<br />
         - L'utilisateur peut en ajouter 6 au maximum (et en enlever).<br />
         - Une fois les villes validées, on lui affiche les distances, durée et durée total de son itinéraire.<br />
@@ -33,15 +36,17 @@ Le client et le serveur n'ont pas les répertoirs node_modules, il faut les inst
               durées.<br />
 # Les fonctionnalités implémentées seulement du côté serveur et disposant d'url intérrogable        
 
-[ADMIN] - Afficher les utilisateur ayant la meilleur note<br />
+[ADMIN] <br />
+        - Afficher les utilisateur ayant la meilleur note<br />
         - afficher les portions standards<br />
         - Créer ou mettre à jour une portion standard<br />
         - Bannir un membre.<br />
         - Afficher les villes les plus impliquées dans un trajet<br />
         - Afficher les utilisateurs les plus "conducteurs" et les plus "voyageurs"<br />
         
-[MEMBRE] - Laisser un message au conducteur ainsi qu'une note (vérification historique en commun)<br />
-          -Laisser un message au passager ainsi qu'une note (vérification historique en commun)<br />
+[MEMBRE] <br />
+        - Laisser un message au conducteur ainsi qu'une note (vérification historique en commun)<br />
+        -Laisser un message au passager ainsi qu'une note (vérification historique en commun)<br />
           
 # Les plus 
 
