@@ -9,50 +9,50 @@ Le client et le serveur n'ont pas les répertoirs node_modules, il faut les inst
 
 # Les fonctionnalités implémentées intégralement (client-server)
 
-[1] -L'utilisateur anonyme peut consulter les annonces via le moteur de recherche .
-    - Il peut trier les annonces par prix ou bien par date.
-    - Il peut afficher les détails d'une annonce et tracer le trajet sur une carte.
-    - Les information du conducteur lui sont cachées s'il n'est pas connecté.
-    - L'utilisateur peut s'inscrire et s'enregistrer.
-    - S'il est connecté il peut les afficher en cliquant sur le lien "afficher le profil".
-    - L'utilisateur peut réserver son itinéraire qui peut être inclus ou égal à l'itinéraire d'une annonce. (décrémente le nombre de places)
+[1] -L'utilisateur anonyme peut consulter les annonces via le moteur de recherche .<br />
+    - Il peut trier les annonces par prix ou bien par date.<br />
+    - Il peut afficher les détails d'une annonce et tracer le trajet sur une carte.<br />
+    - Les information du conducteur lui sont cachées s'il n'est pas connecté.<br />
+    - L'utilisateur peut s'inscrire et s'enregistrer.<br />
+    - S'il est connecté il peut les afficher en cliquant sur le lien "afficher le profil".<br />
+    - L'utilisateur peut réserver son itinéraire qui peut être inclus ou égal à l'itinéraire d'une annonce. (décrémente le nombre de places)<br />
     
     
-[2] - Les annonces sont hiérarchisées de la façon suivante : 
-        - une annonce est composée d'une ou plusieurs portions,
-        - une portion est composée de deux adresses.
-        - une annonce créée a comme conducteur son créateur, de plus elle figurera dans son historique
+[2] - Les annonces sont hiérarchisées de la façon suivante : <br />
+        - une annonce est composée d'une ou plusieurs portions,<br />
+        - une portion est composée de deux adresses.<br />
+        - une annonce créée a comme conducteur son créateur, de plus elle figurera dans son historique<br />
 
-[3] - L'utilisateur enregistré peut créer une annonce dans son espace (accès via menu du panel)
-        - L'annonce peut comporter plusieurs étapes (converties en portions en BDD)
-        - L'utilisateur peut en ajouter 6 au maximum (et en enlever).
-        - Une fois les villes validées, on lui affiche les distances, durée et durée total de son itinéraire.
-        - L'utilisateur doit choisir un prix pour chacune des portions, si celui-ci ne figure pas dans un prix standard.
-        - Une fois les prix saisis, l'utilisateur valide et l'annonce est créée.
+[3] - L'utilisateur enregistré peut créer une annonce dans son espace (accès via menu du panel)<br />
+        - L'annonce peut comporter plusieurs étapes (converties en portions en BDD)<br />
+        - L'utilisateur peut en ajouter 6 au maximum (et en enlever).<br />
+        - Une fois les villes validées, on lui affiche les distances, durée et durée total de son itinéraire.<br />
+        - L'utilisateur doit choisir un prix pour chacune des portions, si celui-ci ne figure pas dans un prix standard.<br />
+        - Une fois les prix saisis, l'utilisateur valide et l'annonce est créée.<br />
         [ i ] en base de donnée, on conserve les informations fournies par l'api google map pour les distance, géolocalisation et      
-              durées.
+              durées.<br />
 # Les fonctionnalités implémentées seulement du côté serveur et disposant d'url intérrogable        
 
-[ADMIN] - Afficher les utilisateur ayant la meilleur note
-        - afficher les portions standards
-        - Créer ou mettre à jour une portion standard
-        - Bannir un membre.
-        - Afficher les villes les plus impliquées dans un trajet
-        - Afficher les utilisateurs les plus "conducteurs" et les plus "voyageurs"
+[ADMIN] - Afficher les utilisateur ayant la meilleur note<br />
+        - afficher les portions standards<br />
+        - Créer ou mettre à jour une portion standard<br />
+        - Bannir un membre.<br />
+        - Afficher les villes les plus impliquées dans un trajet<br />
+        - Afficher les utilisateurs les plus "conducteurs" et les plus "voyageurs"<br />
         
-[MEMBRE] - Laisser un message au conducteur ainsi qu'une note (vérification historique en commun)
-          -Laisser un message au passager ainsi qu'une note (vérification historique en commun)
+[MEMBRE] - Laisser un message au conducteur ainsi qu'une note (vérification historique en commun)<br />
+          -Laisser un message au passager ainsi qu'une note (vérification historique en commun)<br />
           
 # Les plus 
 
-[ ] - Gestion de la session avec express-session.
-[ ] - Une "page" annonce détient autant de version (prix, distance, durée) qu'elle offre de combinaison de ses étapes
-[ ] - Routage interne fils pour l'espace membre.
-[ ] - Autocompletion des villes avec toutes les villes de france (primeng autocomplete).
-[ ] - Datepicker pour la date de départ (primeng)
-[ ] - gestion des portions + affichage sur une carte avec @agm-direction.
-[ ] - Jointures avec Mongodb.
-[ ] - ng-bootstrap.
+[+] - Gestion de la session avec express-session.<br />
+[+] - Une "page" annonce détient autant de version (prix, distance, durée) qu'elle offre de combinaison de ses étapes<br />
+[+] - Routage interne fils pour l'espace membre.<br />
+[+] - Autocompletion des villes avec toutes les villes de france (primeng autocomplete).<br />
+[+] - Datepicker pour la date de départ (primeng)<br />
+[+] - gestion des portions + affichage sur une carte avec @agm-direction.<br />
+[+] - Jointures avec Mongodb.<br />
+[+] - ng-bootstrap.<br />
 
 # Base de donnée MongoDB
 
