@@ -45,8 +45,11 @@ Le client et le serveur n'ont pas les répertoirs node_modules, il faut les inst
           
 # Les plus 
 
-[ ] - Autocompletion des villes avec toutes les villes de france (primeng autocomplete)
+[ ] - Gestion de la session avec express-session.
+[ ] - Une "page" annonce détient autant de version (prix, distance, durée) qu'elle offre de combinaison de ses étapes
+[ ] - Routage interne fils pour l'espace membre.
+[ ] - Autocompletion des villes avec toutes les villes de france (primeng autocomplete).
 [ ] - Datepicker pour la date de départ (primeng)
-[ ] - gestion des portions + affichage sur une carte avec @agm-direction
-[ ] - Jointures avec Mongodb
-[ ] - ng-bootstrap
+[ ] - gestion des portions + affichage sur une carte avec @agm-direction.
+[ ] - Jointures avec Mongodb.
+[ ] - ng-bootstrap.
