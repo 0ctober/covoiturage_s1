@@ -31,7 +31,7 @@ Le client et le serveur n'ont pas les répertoirs node_modules, il faut les inst
         - Une fois les prix saisis, l'utilisateur valide et l'annonce est créée.
         [ i ] en base de donnée, on conserve les informations fournies par l'api google map pour les distance, géolocalisation et      
               durées.
-# Les fonctionnalités implémentées seulement du côté serveur disposant d'url intérrogable        
+# Les fonctionnalités implémentées seulement du côté serveur et disposant d'url intérrogable        
 
 [ADMIN] - Afficher les utilisateur ayant la meilleur note
         - afficher les portions standards
